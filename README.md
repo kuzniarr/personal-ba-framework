@@ -2,9 +2,11 @@
 
 A working setup for a business analyst on a delivery project: the product state lives in one file, requirements are derived from it, and repeatable BA activities run as skills instead of pasted prompts.
 
-Companion repository to the article. It holds a starter set — context files, a system prompt, five skills, and a worked example — not the full system: the article walks through about ten BA activities, five of them ship here as skills, the rest are built the same way on your own process.
+Companion repository to the article [«Від однієї юзер сторі до всього проєкту: фреймворк бізнес-аналітика на делівері-проектах із Claude»](https://dou.ua/forums/topic/62203/) (DOU, in Ukrainian). It holds a starter set — context files, a system prompt, five skills, and a worked example — not the full system: the article walks through about ten BA activities, five of them ship here as skills, the rest are built the same way on your own process.
 
-An article walking through the framework in detail is on the way; the link will land here when it is published.
+![Framework architecture](docs/architecture.png)
+
+*Project Knowledge holds the product state; instructions set the rules; skills run the repeatable BA activities; MCP connectors reach Jira, Confluence and Figma — and every write waits for the BA's approval.*
 
 ---
 
@@ -16,6 +18,7 @@ An article walking through the framework in detail is on the way; the link will 
 | [`skills/`](skills/) | Five skills: building and updating the Product Context, routing an incoming item, decomposing an epic, writing AC. |
 | [`examples/project-knowledge/`](examples/project-knowledge/) | The four context files, filled in for a fictional product. |
 | [`docs/`](docs/) | Step-by-step setup for a new project and for one already under way. |
+| [`writing/`](writing/) | Two extra skills I use for writing long-form articles: drafting in my voice and reviewing a draft. Not part of the BA flow. |
 
 ## Start here
 
@@ -38,6 +41,8 @@ An article walking through the framework in detail is on the way; the link will 
 | [`analyze-incoming`](skills/analyze-incoming.md) | Explains an incoming item and routes it to the next action | A comment, message, transcript snippet, or proposed feature | An explanation, a route, and a drafted question where needed |
 | [`decompose-epic`](skills/decompose-epic.md) | Splits an epic into vertical user stories | The epic and the Product Context | Stories grouped by theme, with rationale and open questions |
 | [`ears-ac`](skills/ears-ac.md) | Writes acceptance criteria in EARS for one story | The story and the Product Context | Criteria, a data dictionary, open questions |
+
+Each skill ends with an abridged example written against the example product, so you can see the input and the expected output before running it.
 
 None of them decides anything about the product. Each one prepares a decision to the point where you accept it or reject it, and every change to the Product Context goes through you.
 
