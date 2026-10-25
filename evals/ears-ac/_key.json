@@ -1,0 +1,66 @@
+{
+  "run-278__01-move-booking": [
+    "opus",
+    "01-move-booking"
+  ],
+  "run-914__02-cancel-own-booking": [
+    "opus",
+    "02-cancel-own-booking"
+  ],
+  "run-230__03-om-cancel-booking": [
+    "opus",
+    "03-om-cancel-booking"
+  ],
+  "run-944__04-check-in": [
+    "opus",
+    "04-check-in"
+  ],
+  "run-706__05-recurring-series": [
+    "opus",
+    "05-recurring-series"
+  ],
+  "run-729__06-om-mark-no-show": [
+    "opus",
+    "06-om-mark-no-show"
+  ],
+  "run-465__07-deactivate-user": [
+    "opus",
+    "07-deactivate-user"
+  ],
+  "run-139__08-remove-om-role": [
+    "opus",
+    "08-remove-om-role"
+  ],
+  "run-282__01-move-booking": [
+    "sonnet",
+    "01-move-booking"
+  ],
+  "run-222__02-cancel-own-booking": [
+    "sonnet",
+    "02-cancel-own-booking"
+  ],
+  "run-999__03-om-cancel-booking": [
+    "sonnet",
+    "03-om-cancel-booking"
+  ],
+  "run-592__04-check-in": [
+    "sonnet",
+    "04-check-in"
+  ],
+  "run-566__05-recurring-series": [
+    "sonnet",
+    "05-recurring-series"
+  ],
+  "run-448__06-om-mark-no-show": [
+    "sonnet",
+    "06-om-mark-no-show"
+  ],
+  "run-308__07-deactivate-user": [
+    "sonnet",
+    "07-deactivate-user"
+  ],
+  "run-529__08-remove-om-role": [
+    "sonnet",
+    "08-remove-om-role"
+  ]
+}

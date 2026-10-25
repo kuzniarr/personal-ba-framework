@@ -1,0 +1,154 @@
+{
+  "opus": {
+    "01-move-booking": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "Minor: the 'no change submitted, no invite sent' rule (criterion 5) is an unrequested addition, but it is a routine default, so the block is essentially clean."
+    },
+    "02-cancel-own-booking": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "Puts an attendee calendar cancellation into the criteria list (criterion 6), correctly flagged proposed \u2014 confirm, which risks it being read as scope."
+    },
+    "03-om-cancel-booking": {
+      "coverage": 0.92,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 0.98,
+      "biggest_problem": "'Attendees are not notified separately' appears only under Out of Scope, not as a criterion."
+    },
+    "04-check-in": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "Slightly heavy on UI and message detail (sign-in redirect, four TBD messages), but nothing it states as decided contradicts the PC."
+    },
+    "05-recurring-series": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [
+        "Occurrences keep the same office-local time across a daylight-saving change (criterion 3), stated as decided"
+      ],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 0.98,
+      "biggest_problem": "States DST handling (fixed office-local time) as a decided criterion although the PC only defines UTC storage and office-timezone display."
+    },
+    "06-om-mark-no-show": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "No substantive problem; several proposed \u2014 confirm criteria (start-time gate, no reason, no notification) depend on client answers before the story is ready."
+    },
+    "07-deactivate-user": {
+      "coverage": 0.8,
+      "must_not_respected": 1.0,
+      "inventions": [
+        "All active sessions of the deactivated user are ended (criterion 8), stated as decided"
+      ],
+      "open_questions": 0.5,
+      "reachability": 1,
+      "overall": 0.8,
+      "biggest_problem": "Omits room release on auto-cancelled bookings and the Workspace-sync open question, and states session termination as decided without a PC basis."
+    },
+    "08-remove-om-role": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "No substantive problem; the post-removal role is correctly proposed \u2014 confirm with a matching open question."
+    }
+  },
+  "sonnet": {
+    "01-move-booking": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "Horizon, duration and working-hours rules are enforced only by pointing to the Data Dictionary (criterion 6), so the 're-runs all creation rules' requirement is implicit rather than stated."
+    },
+    "02-cancel-own-booking": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "No substantive problem; the self-cancellation notification gap is correctly left as an open question rather than a criterion."
+    },
+    "03-om-cancel-booking": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "No substantive problem; the only gap is the checked-in cancellation, which is correctly flagged proposed \u2014 confirm."
+    },
+    "04-check-in": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "No substantive problem once the actor is taken from the story statement; in-app check-in is covered via the reminder link and the hardware exclusion, but never stated in so many words."
+    },
+    "05-recurring-series": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 0.5,
+      "reachability": 1,
+      "overall": 0.88,
+      "biggest_problem": "Misses the open question on whether a no-show on one occurrence affects the rest of the series, which the PC explicitly tracks as open."
+    },
+    "06-om-mark-no-show": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "No substantive problem; the earliest moment manual no-show is allowed stays open (OQ 1) without a matching proposed criterion."
+    },
+    "07-deactivate-user": {
+      "coverage": 0.9,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 0.5,
+      "reachability": 1,
+      "overall": 0.85,
+      "biggest_problem": "Does not raise Workspace sync as an open question (parks it in Out of Scope), and covers reversibility only through Related stories and Out of Scope."
+    },
+    "08-remove-om-role": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "No substantive problem; the post-removal role is correctly proposed \u2014 confirm with a matching open question."
+    }
+  }
+}

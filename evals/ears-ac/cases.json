@@ -1,0 +1,158 @@
+[
+  {
+    "id": "01-move-booking",
+    "story": "As an Employee, I want to move my booking to another time or room, so that I keep a room when my plans change.",
+    "must_cover": [
+      "The holder can change the time, the room, or both",
+      "Moving is possible only up to the start time; after start the booking cannot be moved",
+      "A move re-runs all creation rules: conflict, 30-day horizon, 4-hour maximum, working hours",
+      "A conflict on move is rejected with a message naming the conflicting slot and its holder",
+      "The holder and attendees receive an updated invite after a move"
+    ],
+    "must_not": [
+      "An Office Manager or Admin can move another user's booking",
+      "Moving after the start time is allowed for any role",
+      "An in-app notification is sent"
+    ],
+    "expected_questions": [],
+    "notes": "Fully decided in PC 4.2; a good output needs few or no open questions."
+  },
+  {
+    "id": "02-cancel-own-booking",
+    "story": "As an Employee, I want to cancel my own booking, so that the room is free for others.",
+    "must_cover": [
+      "The holder can cancel their own booking up to the start time",
+      "After the start time the holder cannot cancel",
+      "Cancellation sets the status to cancelled and releases the room immediately"
+    ],
+    "must_not": [
+      "A cancellation reason is required from the holder",
+      "A specific notification to attendees or the holder on self-cancellation is stated as decided",
+      "A manual room release action exists"
+    ],
+    "expected_questions": [
+      "Whether any notification (to the holder or attendees) is sent when the holder cancels their own booking — the PC defines a notice only for Office Manager cancellations"
+    ],
+    "notes": "Trap: PC 4.5 defines a cancellation notice only when an Office Manager cancels."
+  },
+  {
+    "id": "03-om-cancel-booking",
+    "story": "As an Office Manager, I want to cancel any booking in my office with a reason, so that I can resolve room conflicts.",
+    "must_cover": [
+      "The Office Manager can cancel any booking in their own office",
+      "The Office Manager can cancel before and after the start time",
+      "A reason is required to cancel",
+      "The holder receives a cancellation notice that includes the reason",
+      "Attendees are not notified separately",
+      "The room is released immediately"
+    ],
+    "must_not": [
+      "The Office Manager can cancel bookings in other offices",
+      "Attendees receive the cancellation notice",
+      "The Office Manager moves the booking instead of cancelling"
+    ],
+    "expected_questions": [
+      "Reason format or length (free text vs a list) — not stated in the PC; acceptable as TBD or an internal decision"
+    ],
+    "notes": "Superseded draft: attendees used to be notified; current PC says holder only."
+  },
+  {
+    "id": "04-check-in",
+    "story": "As an Employee, I want to check in to my booking, so that the room stays reserved for me.",
+    "must_cover": [
+      "Check-in opens 10 minutes before the start time",
+      "Check-in is done by the holder in the app (who may check in can be implicit in the story statement)",
+      "The reminder sent 10 minutes before start carries the check-in link",
+      "Check-in changes the status from booked to checked-in",
+      "Without check-in by the end of the 15-minute grace period the booking becomes no-show and the room is released (may be a Related story)"
+    ],
+    "must_not": [
+      "Check-in through a door panel, badge or sensor",
+      "Check-in is possible after the booking became no-show",
+      "Attendees can check in"
+    ],
+    "expected_questions": [
+      "Whether the 15-minute grace period should be configurable per office (PC marks the global value as proposed — confirm)"
+    ],
+    "notes": "Trap: hardware check-in is Future Phase; check-in after no-show is unreachable."
+  },
+  {
+    "id": "05-recurring-series",
+    "story": "As an Employee, I want to create a weekly recurring booking, so that I don't book the same meeting every week.",
+    "must_cover": [
+      "Recurrence is weekly only",
+      "A series has at most 12 occurrences",
+      "An occurrence that conflicts with an existing booking is skipped, not the whole series",
+      "The holder receives a series-skip notice for a skipped occurrence",
+      "The creation rules apply to occurrences (duration, working hours, home office)"
+    ],
+    "must_not": [
+      "Daily or monthly recurrence",
+      "The whole series is rejected on one conflict",
+      "A decided answer on how the 30-day horizon applies to a 12-week series"
+    ],
+    "expected_questions": [
+      "How the 30-day booking horizon applies to a weekly series of up to 12 occurrences (12 weeks exceeds 30 days)",
+      "Whether a no-show on one occurrence affects the rest of the series"
+    ],
+    "notes": "Key trap: horizon vs series length is not resolved in the PC."
+  },
+  {
+    "id": "06-om-mark-no-show",
+    "story": "As an Office Manager, I want to mark a booking as no-show manually, so that an empty room is released before the grace period ends.",
+    "must_cover": [
+      "The Office Manager can mark a booking in their own office as no-show",
+      "Manual no-show is possible before the grace period elapses",
+      "Only a booking in status booked (not checked in) can be marked",
+      "Marking no-show releases the room"
+    ],
+    "must_not": [
+      "An Employee can mark no-show",
+      "A checked-in booking can be marked no-show",
+      "No-show statistics are shown to Employees"
+    ],
+    "expected_questions": [
+      "Whether the holder is notified when an Office Manager marks their booking as no-show — not defined in the PC"
+    ],
+    "notes": "Reachability: no-show applies only to booked; checked-in cannot be marked."
+  },
+  {
+    "id": "07-deactivate-user",
+    "story": "As an Admin, I want to deactivate a user, so that people who left the company cannot sign in.",
+    "must_cover": [
+      "Only an Admin deactivates a user (may be implicit in the story statement)",
+      "A deactivated user cannot sign in",
+      "The user's future bookings are cancelled automatically and the rooms released",
+      "Past bookings are retained",
+      "Deactivation is reversible; reactivation does not restore cancelled bookings"
+    ],
+    "must_not": [
+      "Deactivating a Workspace account deactivates the app user",
+      "Bookings are deleted",
+      "A decided notification to attendees of auto-cancelled bookings"
+    ],
+    "expected_questions": [
+      "Whether app deactivation should be synced with Workspace account deactivation",
+      "Whether holders or attendees of the auto-cancelled future bookings are notified"
+    ],
+    "notes": "Sync with Workspace is an explicit open question in the PC."
+  },
+  {
+    "id": "08-remove-om-role",
+    "story": "As an Admin, I want to remove the Office Manager role from a user in an office, so that access matches current responsibilities.",
+    "must_cover": [
+      "Only an Admin removes the Office Manager role (may be implicit in the story statement)",
+      "The removal is per office",
+      "The Admin cannot remove the role from the only remaining Office Manager in an office; another must be assigned first",
+      "An Office Manager cannot remove roles, including their own (may be implicit in the role statement)"
+    ],
+    "must_not": [
+      "The last Office Manager can be removed",
+      "Removing the role in one office changes the user's role in another office"
+    ],
+    "expected_questions": [
+      "Which role the user holds in that office after removal (for example Employee) — not stated in the PC; acceptable as proposed — confirm"
+    ],
+    "notes": "Trap: the post-removal role is not defined."
+  }
+]
