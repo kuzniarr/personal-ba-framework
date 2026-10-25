@@ -64,6 +64,12 @@ What is worth keeping as-is: the separation between what the AI proposes and wha
 
 MIT. Use, adapt, and redistribute freely.
 
+## Evals
+
+Skills change, and models change under them. `evals/` holds a small repeatable test for the `ears-ac` skill: 8 stories on the example Product Context, each with the rules the AC must cover, traps to avoid and open questions a good output should raise. A script checks the format; a blind LLM judge scores coverage, inventions and open questions. Re-run it after every change to the skill.
+
+First run: Sonnet and Opus both scored 0.97. See [evals/ears-ac](evals/ears-ac) for the cases, the scoring and the results.
+
 ## More
 
 - [AI Portfolio](https://app.notion.com/p/AI-Portfolio-Volodymyr-Kuzniar-3fee4cd140e08157a1bed182ef469248?source=copy_link): architecture, skills, prototypes and case studies.
