@@ -38,4 +38,4 @@
 
 - **The fix works on its target.** Both models now raise the open points the Product Context flags (series vs no-show, Workspace sync).
 - **The eval caught new problems elsewhere.** On cases that scored 1.0 before, Sonnet asked a question the Product Context already answers (case 01) and added rejection criteria for states the user cannot reach (cases 02, 04). These are not what the rule asks for, so they may be run-to-run variance rather than the rule; one run per case cannot tell.
-- **Next:** three runs per case to measure variance before the rule goes into the published skill.
+- **Decision:** the rule is adopted in the published skill. **Next:** three runs per case to measure variance.
