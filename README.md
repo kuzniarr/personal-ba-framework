@@ -63,3 +63,8 @@ What is worth keeping as-is: the separation between what the AI proposes and wha
 ## License
 
 MIT. Use, adapt, and redistribute freely.
+
+## More
+
+- [AI Portfolio](https://app.notion.com/p/AI-Portfolio-Volodymyr-Kuzniar-3fee4cd140e08157a1bed182ef469248?source=copy_link): architecture, skills, prototypes and case studies.
+- [Article on DOU](https://dou.ua/forums/topic/62203/): how the framework works, step by step.
