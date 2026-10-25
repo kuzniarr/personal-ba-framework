@@ -1,0 +1,42 @@
+{
+  "run-428__05-recurring-series": [
+    "opus",
+    "05-recurring-series"
+  ],
+  "run-789__07-deactivate-user": [
+    "opus",
+    "07-deactivate-user"
+  ],
+  "run-669__01-move-booking": [
+    "sonnet",
+    "01-move-booking"
+  ],
+  "run-435__02-cancel-own-booking": [
+    "sonnet",
+    "02-cancel-own-booking"
+  ],
+  "run-178__03-om-cancel-booking": [
+    "sonnet",
+    "03-om-cancel-booking"
+  ],
+  "run-802__04-check-in": [
+    "sonnet",
+    "04-check-in"
+  ],
+  "run-683__05-recurring-series": [
+    "sonnet",
+    "05-recurring-series"
+  ],
+  "run-259__06-om-mark-no-show": [
+    "sonnet",
+    "06-om-mark-no-show"
+  ],
+  "run-915__07-deactivate-user": [
+    "sonnet",
+    "07-deactivate-user"
+  ],
+  "run-142__08-remove-om-role": [
+    "sonnet",
+    "08-remove-om-role"
+  ]
+}

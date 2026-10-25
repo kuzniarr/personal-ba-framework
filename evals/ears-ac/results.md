@@ -23,3 +23,19 @@
 ## Limits
 
 8 cases, one run each (no variance measured), one judge model from the same family as one of the candidates, a fictional Product Context. Enough to catch regressions and compare models on this skill; not a benchmark.
+
+# Run 2 — skill change, 2026-10-25
+
+**Change:** one rule added to `ears-ac` (plus a final-gate line): every point the Product Context flags as open, not defined or `proposed — confirm` that touches the story must appear in Open Questions, never only in Out of Scope or Related stories. Re-run: Sonnet on all 8 cases, Opus on the 2 cases it failed. Same cases, same blind judge.
+
+| Case | Sonnet run 1 → 2 | Opus run 1 → 2 |
+|---|---|---|
+| 05 weekly series — open questions | 0.5 → **1.0** | 1.0 → 1.0 |
+| 07 deactivate user — open questions | 0.5 → **1.0** | 0.5 → **1.0** |
+| Sonnet, all 8 cases — overall | 0.97 → 0.91 | — |
+
+## What it showed
+
+- **The fix works on its target.** Both models now raise the open points the Product Context flags (series vs no-show, Workspace sync).
+- **The eval caught new problems elsewhere.** On cases that scored 1.0 before, Sonnet asked a question the Product Context already answers (case 01) and added rejection criteria for states the user cannot reach (cases 02, 04). These are not what the rule asks for, so they may be run-to-run variance rather than the rule; one run per case cannot tell.
+- **Next:** three runs per case to measure variance before the rule goes into the published skill.

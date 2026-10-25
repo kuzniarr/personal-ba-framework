@@ -1,0 +1,30 @@
+{
+  "05-recurring-series": {
+    "has_story_line": true,
+    "has_ac_header": true,
+    "uses_must_not_shall": true,
+    "numbering_continuous": true,
+    "tbd_as_code_chip": true,
+    "tbd_and_proposed_have_questions": true,
+    "no_inline_story_refs": true,
+    "no_source_citations": true,
+    "no_vague_verbs": true,
+    "criteria_count": 15,
+    "open_questions_count": 11,
+    "pass_rate": 1.0
+  },
+  "07-deactivate-user": {
+    "has_story_line": true,
+    "has_ac_header": true,
+    "uses_must_not_shall": true,
+    "numbering_continuous": true,
+    "tbd_as_code_chip": true,
+    "tbd_and_proposed_have_questions": true,
+    "no_inline_story_refs": true,
+    "no_source_citations": true,
+    "no_vague_verbs": true,
+    "criteria_count": 10,
+    "open_questions_count": 7,
+    "pass_rate": 1.0
+  }
+}

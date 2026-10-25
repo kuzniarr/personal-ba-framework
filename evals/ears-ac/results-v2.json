@@ -1,0 +1,101 @@
+{
+  "sonnet": {
+    "08-remove-om-role": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "No material problem; the post-removal role is correctly marked proposed \u2014 confirm with a matching question, and the Office Manager restriction is left implicit in the role statement."
+    },
+    "03-om-cancel-booking": {
+      "coverage": 0.92,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 0.98,
+      "biggest_problem": "The holder's cancellation notice with the reason is pushed to a Related story instead of being stated as a criterion of this story, although the case does not allow that item to be a Related story."
+    },
+    "06-om-mark-no-show": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 1.0,
+      "biggest_problem": "No material problem; at most, criterion 1 leaves the lower bound (before start) open, but it is raised as an open question."
+    },
+    "02-cancel-own-booking": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 0,
+      "overall": 0.75,
+      "biggest_problem": "Criterion 7 specifies rejecting the cancellation of an already-cancelled booking, a state the holder cannot reach in this flow (the booking is terminal and not cancellable)."
+    },
+    "01-move-booking": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 0.5,
+      "reachability": 1,
+      "overall": 0.88,
+      "biggest_problem": "Open question 8 asks whether the 30-day horizon and 4-hour maximum apply to a moved booking, which PC \u00a74.2 already decides (a move re-runs the full creation rule set)."
+    },
+    "05-recurring-series": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [
+        "Data Dictionary, Room: 'an active room in an office where the user holds a role', which contradicts the home-office-only rule (PC \u00a74.1) and the run's own criterion 5"
+      ],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 0.98,
+      "biggest_problem": "The Data Dictionary allows a room in any office where the user holds a role, contradicting the home-office rule and criterion 5."
+    },
+    "04-check-in": {
+      "coverage": 0.9,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 0,
+      "overall": 0.73,
+      "biggest_problem": "Criteria 4\u20135 specify rejecting check-in after the grace period and on no-show/cancelled/completed bookings, which are unreachable states (the reminder link is also only a Related story)."
+    },
+    "07-deactivate-user": {
+      "coverage": 0.9,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 0.98,
+      "biggest_problem": "Reversibility appears only as a Related story, and the rule that reactivation does not restore cancelled bookings is missing entirely."
+    }
+  },
+  "opus": {
+    "05-recurring-series": {
+      "coverage": 1.0,
+      "must_not_respected": 1.0,
+      "inventions": [
+        "Criterion 8: every occurrence keeps the same local time in the office timezone across daylight-saving changes, stated as decided (the PC only says times are stored in UTC and displayed in office time)",
+        "Criterion 3: attendees apply to every occurrence of the series, stated as decided"
+      ],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 0.95,
+      "biggest_problem": "Two behaviours the PC does not decide (DST handling, attendees on every occurrence) are written as plain criteria without proposed \u2014 confirm."
+    },
+    "07-deactivate-user": {
+      "coverage": 0.9,
+      "must_not_respected": 1.0,
+      "inventions": [],
+      "open_questions": 1.0,
+      "reachability": 1,
+      "overall": 0.98,
+      "biggest_problem": "The fact that reactivation does not restore cancelled bookings appears only as a Related story, not as a criterion, although the case does not allow it to be a Related story."
+    }
+  }
+}

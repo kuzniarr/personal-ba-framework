@@ -84,6 +84,7 @@ Two further cases:
 
 - **Unknown value or copy** where the behaviour itself is decided: write the criterion with `` `TBD` `` in place and add the matching open question.
 - **Non-functional requirement** — how fast, how many, under what load. Never a functional criterion. Park it in Open Questions flagged as an NFR so it is not lost. Functional empty and error states stay in the AC.
+- **Open points the Product Context already flags.** Where the Product Context marks something that touches this story as open, not defined, `TBD`, or `proposed — confirm`, it must appear in Open Questions. Never park it only in Out of Scope or Related stories.
 
 ## Output — one block per story
 
@@ -210,3 +211,4 @@ Written against the example Product Context in this repository.
 5. No sibling-story reference appears inline in a criterion.
 6. No NFR is written as a functional criterion.
 7. Each criterion is atomic — no "or / and" hiding several requirements.
+8. Every point the Product Context flags as open, not defined, or `proposed — confirm` that touches this story is in Open Questions.

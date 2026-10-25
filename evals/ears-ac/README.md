@@ -26,4 +26,4 @@ Each case in `cases.json` lists:
 
 Re-run after every change to the skill. A drop in any measure is a regression.
 
-Results of the first run: [results.md](results.md).
+Results: [results.md](results.md) (run 1: model comparison; run 2: a skill change and what it caught).
